@@ -11,13 +11,26 @@ The motor controller we selected required a **0–5 V analog input** to control 
 - Motor Speed: We initially planned to use a non-inverting amplifier to scale the STM32’s 0–3.3 V DAC output up to 5 V. However, testing showed that a full 3.3 V signal already saturated the motor controller’s speed input. As a result, we opted for a voltage follower instead, preserving signal integrity without unnecessary gain.
 - Motor Direction: A comparator circuit generates the required 0/5 V digital signal for direction control. A GPIO pin on the STM32 sets the desired direction (high or low), which is fed into an LM311 comparator. The LM311 compares the 3.3 V input against a fixed reference using a 5 V supply. Its open-collector output, pulled up to 5 V, cleanly shifts the logic level to meet the motor controller’s 5 V requirement.
 
+#### Motor Control Schematic
+
+This schematic shows the analog and digital signal conditioning circuits used to interface the STM32 with the motor controller. It includes the DAC scaling stage and the comparator used to drive the direction pin.
+
 <p align="center">
   <img width="574" alt="Motor_Schematic" src="https://github.com/user-attachments/assets/453c6d5b-dc5c-494b-9a7c-b075dcc98294" />
 </p>
 
+#### Encoder Interface Schematic
+
+This schematic captures the UART-based interface with the absolute encoder using an RS-485 transceiver for noise resilience and protocol compatibility with MODBUS.
+
 <p align="center">
   <img width="541" alt="Encoder_Schematic" src="https://github.com/user-attachments/assets/014afe0d-5d83-40bb-973f-6bd3780a1d69" />
 </p>
+
+
+#### RUDR Control PCB Layout
+
+The completed PCB layout for the rudder control board ("RUDR") integrates motor drive circuitry, encoder interface, and CAN transceivers into a compact design suitable for mounting within the boat.
 
 <p align="center">
   <img width="449" alt="RUDR_PCB" src="https://github.com/user-attachments/assets/957852b4-f12a-496d-b785-04155c8a6157" />
@@ -52,9 +65,8 @@ Below is a block diagram illustrating the overall hardware and firmware design o
   <img width="865" alt="Block Diagram" src="https://github.com/user-attachments/assets/6eb97e8b-2fde-428a-9df5-7170de5df493" />
 </p>
 
----
 
-### 🔁 Closed-Loop PI Controller
+### Closed-Loop PI Controller
 
 The diagram below provides a closer look at the **closed-loop PI control structure**, showing how angle feedback, motor drive, and control logic are interconnected:
 
