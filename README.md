@@ -75,10 +75,19 @@ The diagram below provides a closer look at the **closed-loop PI control structu
   <img width="1039" alt="Closed-Loop PID" src="https://github.com/user-attachments/assets/f029621a-d185-4a7c-afb2-47f16a94de04" />
 </p>
 
-## Validation Approach
-First thin is to check the hardware and see if it works as intended.
-First line of testing for the PID is dry-land testing. The team created a 3D-printed jig that allows the encoder to be mounted unto the motor shaft. Before integrating CAN, we can manually set an error and run the PID
-Using Confluence and Github, we can track firmware versions, gain sets, and mechanical responses — each run logged with scope captures and encoder plots via serial monitor.
+## Validation & Testing
+
+Validation began with basic hardware bring-up to ensure all components performed according to design specifications. After assembling the PCB, continuity tests and power checks were conducted to verify clean power delivery, correct signal routing, and safe operation of all analog and digital subsystems.
+
+Once the hardware was confirmed functional, we moved to **dryland testing** using a **3D-printed rudder jig**. This allowed us to simulate mechanical rotation and validate closed-loop control behavior in a safe, repeatable environment. The jig mounted the encoder coaxially with a mock rudder shaft, enabling us to visualize rudder movement and assess the responsiveness of the PI controller under step and ramp inputs.
+
+Key testing milestones included:
+- Verifying that the DAC output correctly scaled to the expected analog voltage range (0–3.3 V) and saturated the motor controller as intended
+- Confirming that the comparator circuit produced stable 0/5 V direction signals
+- Testing the encoder communication via MODBUS over UART, and validating real-time angle readings under movement
+- Evaluating the performance of the PI controller, tuning gains to minimize overshoot and steady-state error across a range of setpoints
+
+All test results, scope captures, and tuning iterations were documented in **Confluence** to support reproducibility and team-wide visibility. The current firmware and hardware configuration are now stable and prepared for integration into the full boat system, with on-water trials scheduled next.
 
 Below is a quick snippet of the PI controller in action:
 
@@ -97,3 +106,4 @@ The rudder control hardware has been finalized and enclosed in a form factor sui
 Next steps include:
 - Performing in-water tuning under wave and wind disturbances
 - Integrating with the navigation planner for autonomous heading control
+- Revise the current PCB for final launch
