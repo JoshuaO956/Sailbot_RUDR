@@ -57,8 +57,10 @@ The controller runs at **50 Hz**, matching the update rate of the absolute encod
 
 The firmware also integrates with the team's CAN bus library, subscribing to rudder setpoints from the navigation node and publishing current angle and status for telemetry. 
 
+**Note:** The actual source code for the rudder control firmware is not included in this repository as it is still undergoing development, validation, and internal review. To protect against the premature release of incomplete or unverified control logic, only high-level descriptions, architecture diagrams, and representative pseudocode are provided. This ensures that the design intent and control structure are communicated clearly without exposing unstable or incomplete implementations.
+
 ### Encoder Firmware
-The encoder communicates via MODBUS over UARTThe MODBUS protocol layer was implemented by other members of the team, and I worked closely with them to integrate it into my firmware as a reusable encoder driver. 
+The encoder communicates via MODBUS over UARTThe MODBUS protocol layer was implemented by other members of the team, and I worked closely with them to integrate it into my firmware as a reusable encoder driver. While the low-level MODBUS communication code is not published here, the structure and integration logic are documented to illustrate how the encoder fits into the overall system. Once testing is finalized, we may consider sharing selected firmware modules or representative pseudocode snippets.
 
 Below is a block diagram illustrating the overall hardware and firmware design of the rudder control subsystem:
 
