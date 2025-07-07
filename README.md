@@ -13,7 +13,13 @@ The motor controller we selected required a **0–5 V analog input** to control 
 
 <p align="center">
   <img width="574" alt="Motor_Schematic" src="https://github.com/user-attachments/assets/453c6d5b-dc5c-494b-9a7c-b075dcc98294" />
+</p>
+
+<p align="center">
   <img width="541" alt="Encoder_Schematic" src="https://github.com/user-attachments/assets/014afe0d-5d83-40bb-973f-6bd3780a1d69" />
+</p>
+
+<p align="center">
   <img width="449" alt="RUDR_PCB" src="https://github.com/user-attachments/assets/957852b4-f12a-496d-b785-04155c8a6157" />
 </p>
 
@@ -53,9 +59,8 @@ Using Confluence and Github, we can track firmware versions, gain sets, and mech
 
 Below is a quick snippet of the PI controller in action:
 
-<p align="center">
-  <vid alt="PI Demo" src= "https://github.com/user-attachments/assets/c5ccd810-b9ac-4864-abd1-5d7854723d40" />
-</p>
+
+https://github.com/user-attachments/assets/0d4bbd11-4ae1-4a0a-9f7d-93dab6fbd5bc
 
 
 ## Project Status
