@@ -44,11 +44,14 @@ The controller runs at **50 Hz**, matching the update rate of the absolute encod
 The firmware also integrates with the team's CAN bus library, subscribing to rudder setpoints from the navigation node and publishing current angle and status for telemetry. 
 
 ### Encoder Firmware
-- The encoder communicates via MODBUS over UARTThe MODBUS protocol layer was implemented by other members of the team, and I worked closely with them to integrate it into my firmware as a reusable encoder driver.
+The encoder communicates via MODBUS over UARTThe MODBUS protocol layer was implemented by other members of the team, and I worked closely with them to integrate it into my firmware as a reusable encoder driver. Attached below in a block diagram of the overall design:
+<p align="center">
+  <img width="865" alt="Block Diagram" src="https://github.com/user-attachments/assets/6eb97e8b-2fde-428a-9df5-7170de5df493" />
+</p>
 
+Attached below in an in-depth look of the closed-loop PI:
 <p align="center">
   <img width="1039" alt="Closed-Loop PID" src="https://github.com/user-attachments/assets/f029621a-d185-4a7c-afb2-47f16a94de04" />
-  <img width="865" alt="Block Diagram" src="https://github.com/user-attachments/assets/6eb97e8b-2fde-428a-9df5-7170de5df493" />
 </p>
 
 
