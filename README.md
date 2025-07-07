@@ -53,8 +53,9 @@ Using Confluence and Github, we can track firmware versions, gain sets, and mech
 
 Below is a quick snippet of the PI controller in action:
 
-
-https://github.com/user-attachments/assets/79ba1124-9933-4cc1-adac-325ea4531569
+<p align="center">
+  <vid alt="PI Demo" src= "https://github.com/user-attachments/assets/c5ccd810-b9ac-4864-abd1-5d7854723d40" />
+</p>
 
 
 ## Project Status
