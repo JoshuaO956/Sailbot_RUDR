@@ -1,4 +1,6 @@
 # UBC Sailbot – Rudder Control Subsystem
+UBC Sailbot is an engineering design team at the University of British Columbia focused on building small-to-medium autonomous sailboats of collecting oceanic and atmospheric data in the Pacific Ocean with the hopes of integrating our technology with the fields of climate research and sustainability. Our current project is POLARIS, which is a 3-meter fully autonomous sailboat. More details can be found [here](
+here: https://www.ubcsailbot.org/discover-polaris).
 
 As part of UBC Sailbot’s **Drive (DRV) subteam**, I have been responsible for developing the embedded hardware and firmware for the **rudder control subsystem** of an autonomous sailboat designed for open-ocean navigation. My role combines hardware design and embedded programming.
 
